@@ -118,6 +118,7 @@ public class QuickStatusBarHeader extends FrameLayout implements TunerService.Tu
     private StatusBarContentInsetsProvider mInsetsProvider;
 
     private int mRoundedCornerPadding = 0;
+    private int mStatusBarPaddingTop;
     private int mWaterfallTopInset;
     private int mCutOutPaddingLeft;
     private int mCutOutPaddingRight;
@@ -295,6 +296,9 @@ public class QuickStatusBarHeader extends FrameLayout implements TunerService.Tu
                 R.dimen.rounded_corner_content_padding);
 
         int statusBarHeight = SystemBarUtils.getStatusBarHeight(mContext);
+
+        mStatusBarPaddingTop = resources.getDimensionPixelSize(
+                R.dimen.status_bar_padding_top);
 
         mDatePrivacyView.getLayoutParams().height = statusBarHeight;
         mDatePrivacyView.setLayoutParams(mDatePrivacyView.getLayoutParams());
@@ -610,6 +614,11 @@ public class QuickStatusBarHeader extends FrameLayout implements TunerService.Tu
                 0);
         mStatusIconsView.setPadding(paddingLeft,
                 statusBarPaddingTop,
+                mStatusBarPaddingTop,
+                paddingRight,
+                0);
+        mStatusIconsView.setPadding(paddingLeft,
+                mStatusBarPaddingTop,
                 paddingRight,
                 0);
     }
