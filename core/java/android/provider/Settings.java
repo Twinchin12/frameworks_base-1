@@ -6277,6 +6277,13 @@ public final class Settings {
          * @hide
          */
         public static final String QS_FOOTER_WARNINGS = "qs_footer_warnings";
+        
+        /**
+         * Haptic feedback on scroll fling
+         * @hide
+         */ 
+        @Readable
+        public static final String SCROLL_FLING_HAPTIC_FEEDBACK = "scroll_fling_haptic_feedback";
 
         /**
          * reTicker Status
